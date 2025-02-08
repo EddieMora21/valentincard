@@ -217,7 +217,7 @@ const ValentineCard = () => {
                       fontSize: "1.5rem",
                     }}
                   >
-                    Aunque este mas pobre que cavernicola,minimo se saco una
+                    Aunque este mas pobre que cavernicola,minimo le saco una
                     sonrisa:)
                   </span>
                 </motion.div>
