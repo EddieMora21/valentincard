@@ -128,7 +128,7 @@ const ValentineCard = () => {
               color: "#ff4d6d",
             }}
           >
-            Ingrid
+            Mi bb
           </div>
 
           <div
@@ -170,7 +170,7 @@ const ValentineCard = () => {
                     paddingBottom: "0.5rem",
                   }}
                 >
-                  Para que no seas más espectadora
+                  Para la mas bella y hermosa
                 </h1>
 
                 <motion.p
@@ -184,9 +184,8 @@ const ValentineCard = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  Aunque no tengo ni donde caer muerto, no quiero que seas
-                  espectadora, así que este loco tonto, que tiene la cabeza más
-                  dura que una piedra, le quiere decir que...
+                  Aunque no este contigo y este lejos quiero que sepas que te
+                  quiero mucho bb
                 </motion.p>
 
                 <motion.div
@@ -208,7 +207,7 @@ const ValentineCard = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.7 }}
                 >
-                  Si quieres ser mi San Valentín
+                  Feliz cumpleaños
                   <br />
                   <span
                     style={{
@@ -217,8 +216,14 @@ const ValentineCard = () => {
                       fontSize: "1.5rem",
                     }}
                   >
-                    Aunque este mas pobre que cavernicola,minimo le saco una
-                    sonrisa:)
+                    A pesar de la distancia que nos separa, siento tu presencia
+                    en cada latido y en cada pensamiento. Cada mensaje, se
+                    convierte en el puente que acorta los kilómetros y une
+                    nuestras almas. tus palabras son el refugio que me llena de
+                    esperanza.Gracias por llegar a ni vida y por mantener viva
+                    la llama de este amor a pesar de la separación. Cada día que
+                    pasa, sueño con el momento en que la distancia deje de ser
+                    un obstáculo y pueda abrazarte sin reservas.
                   </span>
                 </motion.div>
 
