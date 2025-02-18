@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
+import M from "../assets/m.jpeg";
 
 // Componente individual de tarjeta de amor
 const LoveCard = ({ cardData }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [clickCount, setClickCount] = useState(0);
 
-  // Función para manejar los clics en la tarjeta
   const handleClick = () => {
     if (!isOpen) {
       setIsOpen(true);
@@ -24,7 +24,6 @@ const LoveCard = ({ cardData }) => {
     }
   };
 
-  // Estilos de la tarjeta, combinando estilos comunes con los personalizados
   const styles = {
     envelope: {
       position: "relative",
@@ -98,7 +97,6 @@ const LoveCard = ({ cardData }) => {
         >
           {cardData.icon || "❤️"}
         </motion.div>
-
         <div
           style={{
             position: "absolute",
@@ -112,7 +110,6 @@ const LoveCard = ({ cardData }) => {
         >
           {cardData.signature || "Mi amor"}
         </div>
-
         <div
           style={{
             position: "absolute",
@@ -154,6 +151,22 @@ const LoveCard = ({ cardData }) => {
               >
                 {cardData.title || "Para ti, mi amor"}
               </h1>
+
+              {/* Si la carta tiene la propiedad "image", se muestra la imagen */}
+              {cardData.image && (
+                <motion.img
+                  src={cardData.image}
+                  alt="Imagen de amor"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  style={{
+                    width: "100%",
+                    borderRadius: "8px",
+                    marginBottom: "1rem",
+                  }}
+                />
+              )}
 
               <motion.p
                 style={{
@@ -214,7 +227,6 @@ const LoveCard = ({ cardData }) => {
   );
 };
 
-// Validación de props para LoveCard
 LoveCard.propTypes = {
   cardData: PropTypes.shape({
     id: PropTypes.number.isRequired,
@@ -232,12 +244,11 @@ LoveCard.propTypes = {
     footerMessage: PropTypes.string,
     footerColor: PropTypes.string,
     footerIcon: PropTypes.string,
+    image: PropTypes.string, // Nueva propiedad para la imagen
   }).isRequired,
 };
 
-// Componente que agrupa diferentes tarjetas de amor
 const ValentineCards = () => {
-  // Array de objetos con datos y estilos personalizados para cada tarjeta
   const cardsData = [
     {
       id: 1,
@@ -248,13 +259,13 @@ const ValentineCards = () => {
       signature: "Mi bb",
       subtitle: "De mi para ti :3",
       title: "Para la más hermosa",
-      headingColor: "#c54b6e",
+      headingColor: "#c54d6e",
       textColor: "#5a3d3d",
       message:
         "Aunque la distancia nos separe, mi amor por ti sigue intacto. Cada mensaje tuyo es un abrazo que me llega al corazón.",
       waxSealIcon: "💌",
       footerMessage: "Pronto estaremos juntos.",
-      footerColor: "#c54b6e",
+      footerColor: "#c54d6d",
       footerIcon: "💞",
     },
     {
@@ -329,9 +340,117 @@ const ValentineCards = () => {
       footerColor: "#1e8449",
       footerIcon: "💚",
     },
+    {
+      id: 6,
+      envelopeColor: "#e74c3c",
+      letterBackground: "#fce4ec",
+      waxSealColor: "#d81b60",
+      icon: "💖",
+      signature: "Corazoncito",
+      subtitle: "Siempre en mi mente",
+      title: "Amor que florece",
+      headingColor: "#d81b60",
+      textColor: "#ad1457",
+      message:
+        "Cada día que pasa, mi amor por ti crece más y florece en cada rincón de mi alma.",
+      waxSealIcon: "💌",
+      footerMessage: "Eres mi eterno jardín.",
+      footerColor: "#d81b60",
+      footerIcon: "🌹",
+    },
+    {
+      id: 7,
+      envelopeColor: "#16a085",
+      letterBackground: "#e0f7fa",
+      waxSealColor: "#00897b",
+      icon: "💚",
+      signature: "Mi Alma",
+      subtitle: "Unidos por siempre",
+      title: "Caminos que se encuentran",
+      headingColor: "#00897b",
+      textColor: "#00695c",
+      message:
+        "Aunque nuestros caminos sean distintos, el destino nos unió en este hermoso viaje del amor.",
+      waxSealIcon: "💌",
+      footerMessage: "Juntos en cada paso.",
+      footerColor: "#00897b",
+      footerIcon: "🌿",
+    },
+    {
+      id: 8,
+      envelopeColor: "#f1c40f",
+      letterBackground: "#fffde7",
+      waxSealColor: "#f39c12",
+      icon: "💛",
+      signature: "Mi Sol",
+      subtitle: "Iluminando mi vida",
+      title: "Luz en la oscuridad",
+      headingColor: "#f39c12",
+      textColor: "#f57f17",
+      message:
+        "Tu sonrisa ilumina mis días y convierte la rutina en un sueño lleno de color.",
+      waxSealIcon: "💌",
+      footerMessage: "Brillamos juntos.",
+      footerColor: "#f39c12",
+      footerIcon: "☀️",
+    },
+    {
+      id: 9,
+      envelopeColor: "#9c27b0",
+      letterBackground: "#f3e5f5",
+      waxSealColor: "#8e24aa",
+      icon: "💜",
+      signature: "Mi Encanto",
+      subtitle: "Eres mi magia",
+      title: "Un hechizo de amor",
+      headingColor: "#8e24aa",
+      textColor: "#6a1b9a",
+      message:
+        "Cada instante contigo es como vivir un sueño encantado donde el amor se vuelve magia pura.",
+      waxSealIcon: "💌",
+      footerMessage: "Nuestro lazo es de otro mundo.",
+      footerColor: "#8e24aa",
+      footerIcon: "✨",
+    },
+    {
+      id: 10,
+      envelopeColor: "#2980b9",
+      letterBackground: "#eaf2f8",
+      waxSealColor: "#2471a3",
+      icon: "💙",
+      signature: "Mi Estrella",
+      subtitle: "Siempre en mi cielo",
+      title: "Amor sin límites",
+      headingColor: "#2471a3",
+      textColor: "#1c5980",
+      message:
+        "Tu presencia en mi vida es como la brisa fresca en un día caluroso, refrescante y llena de amor.",
+      waxSealIcon: "💌",
+      footerMessage: "Contigo, todo es posible.",
+      footerColor: "#2471a3",
+      footerIcon: "⭐",
+    },
   ];
 
-  // Estilos para agrupar las tarjetas en un contenedor tipo grid
+  // Seleccionar 4 índices aleatorios para asignarles una imagen
+  const randomIndices = [];
+  while (randomIndices.length < 4) {
+    const index = Math.floor(Math.random() * cardsData.length);
+    if (!randomIndices.includes(index)) {
+      randomIndices.push(index);
+    }
+  }
+
+  // Se agregará la propiedad "image" a las cartas seleccionadas
+  const updatedCardsData = cardsData.map((card, index) =>
+    randomIndices.includes(index)
+      ? {
+          ...card,
+          image: M,
+        }
+      : card
+  );
+
   const gridStyles = {
     display: "flex",
     flexWrap: "wrap",
@@ -339,13 +458,31 @@ const ValentineCards = () => {
     alignItems: "center",
     padding: "20px",
     gap: "20px",
+    position: "relative",
+    zIndex: 2,
   };
 
   return (
-    <div style={gridStyles}>
-      {cardsData.map((card) => (
-        <LoveCard key={card.id} cardData={card} />
-      ))}
+    // Contenedor sin imagen de fondo (solo un color plano)
+    <div
+      style={{
+        minHeight: "100vh",
+        position: "relative",
+        overflow: "hidden",
+        backgroundColor: "#f8f8f8",
+      }}
+    >
+      <motion.div
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <div style={gridStyles}>
+          {updatedCardsData.map((card) => (
+            <LoveCard key={card.id} cardData={card} />
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 };
